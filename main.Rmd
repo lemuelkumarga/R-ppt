@@ -11,9 +11,13 @@ packages <- c("knitr")
 tmp <- lapply(packages, library, character.only = TRUE)
 
 # Set images globally
-opts_chunk$set(fig.align='center', fig.height = 5, fig.width = 8)
+ou <- function(h_units) { 96 * h_units }
+opts_chunk$set(fig.align='center', fig.height = 5, fig.width = 8,
+               out.height= ou(5), out.width = ou(8), dpi = 300, echo=FALSE)
 read_chunk("main.R")
+```
 
+```{r}
 <<init>>
 ```
 
